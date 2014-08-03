@@ -1,4 +1,4 @@
-A sample AngularJS tutorial project based on [Dan Wahlin's AngularJS JumpStart]("https://www.udemy.com/angularjs-jumpstart).
+A sample AngularJS tutorial project based on [Dan Wahlin's AngularJS JumpStart](https://www.udemy.com/angularjs-jumpstart).
 
 This project contains the following applications:
 * `apps/invoice` - A customers' invoice SPA.
