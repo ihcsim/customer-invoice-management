@@ -1,0 +1,38 @@
+<!doctype html>
+<html data-ng-app="">
+  <head>
+    <title>AngularJS Tutorial</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <link rel="stylesheet" href="theme.css" type="text/css" media="all"/>
+  </head>
+
+  <body data-ng-init="username='Guest'; data={loggedIn: false, warning: 'red', info: 'navy'}; 
+  sites=[{view:'About',url:'about.example'}, {view:'Home',url:'home.example'}, {view:'FAQ',url:'faq.example'}, {view:'Contact',url:'contact.example'}]; 
+  customers=[{name:'John',city:'Vancouver'}, {name:'Alex', city:'Richmond'}, {name:'Brad',city:'Surrey'}, {name:'Kim',city:'Vancouver'},{name:'Lloyd',city:'Vancouver'}];">
+    <div>Hello <span data-ng-bind="username"></span>!</div>
+    <div>Your name, please: <input type="text" data-ng-model="username" /></div>
+    <button data-ng-click="datetime='2014-07-31 19:00PM'">Show Current Time</button>:<span data-ng-bind="datetime"></span>
+
+    <div data-ng-switch on="data.loggedIn">
+      <div data-ng-switch-when="true" data-ng-class="data.info">You are currently logged in.</div>
+      <div data-ng-switch-default data-ng-class="data.warning"><a href="#" data-ng-click="data.loggedIn=true">Please login</a></div>
+    </div>
+
+    <div>
+      <p>Site Navigation:</p>
+      <ul><li data-ng-repeat="site in sites"><a href="{{site.url}}"><span data-ng-bind="site.view"></span></a></li></ul>
+    </div>
+
+    <div>
+      <p>Customers List</p>
+      Customer Filter:&nbsp;<input type="text" data-ng-model="customer.filter.city" />
+      <table>
+        <tr>
+          <th data-ng-click="sortBy='name';reverse=!reverse">Name</th>
+          <th data-ng-click="sortBy='city';reverse=!reverse">City</th>
+        </tr>
+        <tr data-ng-repeat="customer in customers | filter:customer.filter.city | orderBy:sortBy:reverse"><td><span data-ng-bind="customer.name"></span></td><td><span data-ng-bind="customer.city"></span></td></tr>
+      </table>
+    </div>
+  </body>
+</html>

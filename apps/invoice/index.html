@@ -1,0 +1,38 @@
+<!doctype html>
+<html data-ng-app>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <link rel="stylesheet" href="theme.css" type="text/css" media="all" />
+    <title>Customer Orders</title>
+  </head>
+
+  <body data-ng-init="user={username:'Guest', isLoggedIn:false}; customers=[{name:'John Smith',city:'Vancouver',invoice_total:'10.8547',joined:'2014-07-01'}, {name:'Susan Yeo',city:'Surrey',invoice_total:'57.4781',joined:'2013-12-11'}, {name:'Kimberly Jacobson',city:'Vancouver',invoice_total:'47.5478',joined:'2014-02-05'}, {name:'Michael Smith',city:'Burnaby',invoice_total:'26.8795',joined:'2014-01-05'}, {name:'Ted Lawrance',city:'Surrey',invoice_total:'15.7895',joined:'201-06-02'}, {name:'Janet Lowe',city:'Burnaby',invoice_total:'148.2569',joined:'2013-09-12'}, {name:'Barb Simpson',city:'Burnaby',invoice_total:'15.78965',joined:'2013-08-21'}, {name:'Hans Macdonald',city:'Richmond',invoice_total:'254.89647',joined:'2014-02-06'}, {name:'Bowe Steele',city:'Surrey',invoice_total:'22.6598',joined:'2014-07-12'}, {name:'May Hawnes',city:'Vancouver',invoice_total:'58.699',joined:'2013-09-15'}, {name:'Faye Michaels',city:'Vancouver',invoice_total:'243.9874',joined:'2014-05-06'}, {name:'Lauren Hans',city:'Vancouver',invoice_total:'48.2654',joined:'2014-05-06'}]">
+
+    <div id="greetings" data-ng-switch on="user.isLoggedIn">
+      <div id="guest-greetings" data-ng-switch-default>Hello Guest! <br />Please specify your username <input id="username" type="text" data-ng-model="user.username"/> prior to <a href="#" data-ng-click="user.isLoggedIn=true">logging in</a>.</div>
+      <div id="admin-greetings" data-ng-switch-when="true">Welcome back <span data-ng-bind="user.username"></span>!</div>
+    </div>
+
+    <div>
+      <div>Search Customer:&nbsp;<input id="customer-filter" type="text" data-ng-model="customer.filter.name" /></div>
+
+      <div>
+        <table id="customers-table">
+          <tr>
+            <th data-ng-click="sortBy='name';reverse=!reverse">Name</th>
+            <th data-ng-click="sortBy='city';reverse=!reverse">City</th>
+            <th data-ng-click="sortBy='invoice_total';reverse=!reverse">Invoice Total</th>
+            <th data-ng-click="sortBy='joined';reverse=!reverse">Members Since</th>
+          </tr> 
+          <tr data-ng-repeat="customer in customers | filter:customer.filter.name | orderBy:sortBy:reverse">
+            <td><span data-ng-bind="customer.name"></span></td>
+            <td><span data-ng-bind="customer.city"></span></td>
+            <td><span data-ng-bind="customer.invoice_total"></span></td>
+            <td><span data-ng-bind="customer.joined"></span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
