@@ -1,0 +1,21 @@
+<div>
+  <div>Search Customer:&nbsp;<input id="customer-filter" type="text" data-ng-model="customer.filter.name" /></div>
+    <div>Total number of customers: <span data-ng-bind="customers.length"></span></div>
+      <div>
+        <table id="customers-table">
+          <tr>
+            <th data-ng-click="doSort('name')">Name</th>
+            <th data-ng-click="doSort('city')">City</th>
+            <th data-ng-click="doSort('invoice_total')">Invoice Total</th>
+            <th data-ng-click="doSort('joined')">Members Since</th>
+          </tr>
+          <tr data-ng-repeat="customer in customers | filter:customer.filter.name | orderBy:sortBy:reverse">
+            <td><span data-ng-bind="customer.name"></span></td>
+            <td><span data-ng-bind="customer.city"></span></td>
+            <td><span data-ng-bind="customer.invoice_total"></span></td>
+            <td><span data-ng-bind="customer.joined"></span></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>

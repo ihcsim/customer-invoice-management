@@ -1,39 +1,23 @@
 <!doctype html>
 <html data-ng-app="InvoiceApp">
   <head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-    <script type="text/javascript" src="js/invoice-app.js"></script>
-    <script type="text/javascript" src="js/controllers/invoice-controller.js"></script>
     <link rel="stylesheet" href="theme.css" type="text/css" media="all" />
     <title>Customer Orders</title>
   </head>
 
-  <body data-ng-init="user={username:'Guest', isLoggedIn:false};" data-ng-controller="InvoiceController">
+  <body data-ng-init="user={username:'Guest', isLoggedIn:false};">
     <div id="greetings" data-ng-switch on="user.isLoggedIn">
       <div id="guest-greetings" data-ng-switch-default>Hello Guest! <br />Please specify your username <input id="username" type="text" data-ng-model="user.username"/> prior to <a href="#" data-ng-click="user.isLoggedIn=true">logging in</a>.</div>
       <div id="admin-greetings" data-ng-switch-when="true">Welcome back <span data-ng-bind="user.username"></span>!</div>
     </div>
 
-    <div>
-      <div>Search Customer:&nbsp;<input id="customer-filter" type="text" data-ng-model="customer.filter.name" /></div>
-      <div>Total number of customers: <span data-ng-bind="customers.length"></span></div>
-      <div>
-        <table id="customers-table">
-          <tr>
-            <th data-ng-click="doSort('name')">Name</th>
-            <th data-ng-click="doSort('city')">City</th>
-            <th data-ng-click="doSort('invoice_total')">Invoice Total</th>
-            <th data-ng-click="doSort('joined')">Members Since</th>
-          </tr> 
-          <tr data-ng-repeat="customer in customers | filter:customer.filter.name | orderBy:sortBy:reverse">
-            <td><span data-ng-bind="customer.name"></span></td>
-            <td><span data-ng-bind="customer.city"></span></td>
-            <td><span data-ng-bind="customer.invoice_total"></span></td>
-            <td><span data-ng-bind="customer.joined"></span></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </body>
+    <div data-ng-view></div>
+
+    <script type="text/javascript" src="scripts/angular.1.2.21.min.js"></script>
+    <script type="text/javascript" src="scripts/angular-route.1.2.21.min.js"></script>
+    <script type="text/javascript" src="js/invoice-app.js"></script>
+    <script type="text/javascript" src="js/controllers/invoice-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/customer-controller.js"></script>
+ </body>
 </html>
 
