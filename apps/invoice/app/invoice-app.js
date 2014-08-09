@@ -5,7 +5,7 @@
     $routeProvider
       .when('/invoice/:invoiceId',{
           controller: 'InvoiceController',
-          templateUrl: 'app/views/invoice.html'
+          templateUrl: 'app/views/invoices.html'
         })
       .when('/',{
          controller: 'CustomerController',
