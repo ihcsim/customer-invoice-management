@@ -1,6 +1,6 @@
 
 (function() {
-  var InvoiceController = function($scope){
+  var CustomerController = function($scope){
 
     $scope.sortBy = 'name'; // default sort
     $scope.reverse = false;
@@ -25,7 +25,7 @@
     };
   };
 
-  InvoiceController.$inject = ['$scope']; // dealing with minification of parameters.
-  angular.module('InvoiceApp').controller('InvoiceController', InvoiceController);
+  CustomerController.$inject = ['$scope']; // dealing with minification of parameters.
+  angular.module('InvoiceApp').controller('CustomerController', CustomerController);
 
 }());

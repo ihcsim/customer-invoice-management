@@ -1,11 +1,11 @@
 (function(){
 
-  var CustomerController = function($scope){
+//  var CustomerController = function($scope){
     
     
-  };
+ // };
   
   
-  angular.module('InvoiceApp').controller('CustomerController', CustomerController);  
+  //angular.module('InvoiceApp').controller('CustomerController', CustomerController);  
   
 }());

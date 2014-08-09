@@ -3,14 +3,14 @@
 
   app.config(function($routeProvider){
     $routeProvider
-      .when('/',{
+      .when('/invoice/:invoiceId',{
           controller: 'InvoiceController',
           templateUrl: 'app/views/invoice.html'
         })
-       .when('/customer/:customerId',{
-          controller: 'CustomerController',
-          templateUrl: 'app/views/customer.html'
-        })
+      .when('/',{
+         controller: 'CustomerController',
+         templateUrl: 'app/views/customers.html'
+       })
       .otherwise({redirectTo: '/'});
   });
 
