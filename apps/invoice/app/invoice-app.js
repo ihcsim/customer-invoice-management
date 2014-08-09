@@ -5,11 +5,11 @@
     $routeProvider
       .when('/',{
           controller: 'InvoiceController',
-          templateUrl: 'js/views/invoice.html'
+          templateUrl: 'app/views/invoice.html'
         })
        .when('/customer/:customerId',{
           controller: 'CustomerController',
-          templateUrl: 'js/views/customer.html'
+          templateUrl: 'app/views/customer.html'
         })
       .otherwise({redirectTo: '/'});
   });
