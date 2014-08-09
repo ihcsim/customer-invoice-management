@@ -13,4 +13,17 @@
         })
       .otherwise({redirectTo: '/'});
   });
+
+  app.filter('customCustomerFilter', function(){
+    return function(objects, criteria){
+      var filterResult = new Array();
+      if(!criteria)
+        return objects;
+
+      for(index in objects)
+        if(objects[index].name.indexOf(criteria) != -1 || objects[index].city.indexOf(criteria) != -1)
+          filterResult.push(objects[index]);
+      return filterResult;  
+    }    
+  });
 }());
