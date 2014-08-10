@@ -14,17 +14,17 @@ div{
   margin-bottom:20px;
 }
 
-#customers-table{
+table.data-table{
   border:1px solid gray;
   border-collapse:collapse;
   text-align:center;
 }
 
-#customers-table th, #customers-table td{
+table.data-table th, table.data-table td{
   padding:5px;
   border: 1px solid lightgray;
 }
 
-#customers-table th{
+table.data-table th{
   background-color:lightblue;
 }
