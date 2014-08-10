@@ -3,7 +3,7 @@
 
   app.config(function($routeProvider){
     $routeProvider
-      .when('/invoice/:invoiceId',{
+      .when('/invoice/:customerId',{
           controller: 'InvoiceController',
           templateUrl: 'app/views/invoices.html'
         })
