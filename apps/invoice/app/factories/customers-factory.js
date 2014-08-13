@@ -1,6 +1,6 @@
 (function(){
   
-  var CustomerFactory = function() {
+  var customerFactory = function() {
     
     var customers = [
       {id:1, name:'John Smith',city:'Vancouver',invoice_total:'10.8547',joined:'2014-07-01'},
@@ -24,5 +24,5 @@
     return factory;    
   };
 
-  angular.module('InvoiceApp').factory('CustomerFactory', CustomerFactory);
+  angular.module('InvoiceApp').factory('customerFactory', customerFactory);
 }());

@@ -8,7 +8,7 @@
           templateUrl: 'app/views/invoices.html'
         })
       .when('/',{
-         controller: 'CustomerController',
+         controller: 'customerController',
          templateUrl: 'app/views/customers.html'
        })
       .otherwise({redirectTo: '/'});

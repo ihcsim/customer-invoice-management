@@ -1,6 +1,6 @@
 (function(){
   
-  var CustomerService = function() {
+  var customerService = function() {
     
     var customers = [
       {id:1, name:'John Smith',city:'Vancouver',invoice_total:'10.8547',joined:'2014-07-01'},
@@ -21,5 +21,5 @@
     };
   };
 
-  angular.module('InvoiceApp').service('CustomerService', CustomerService);
+  angular.module('InvoiceApp').service('customerService', customerService);
 }());
