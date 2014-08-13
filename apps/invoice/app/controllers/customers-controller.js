@@ -1,10 +1,10 @@
 
 (function() {
-  var customerController = function($scope, customerService){
+  var customerController = function($scope, customerService, appSettings){
 
     $scope.sortBy = 'name'; // default sort
     $scope.reverse = false;
-
+    $scope.appSettings = appSettings;
     $scope.customers = customerService.getCustomers();
 
     $scope.doSort = function(property){
@@ -13,7 +13,7 @@
     };
   };
 
-  customerController.$inject = ['$scope', 'customerService']; // dealing with minification of parameters.
+  customerController.$inject = ['$scope', 'customerService', 'appSettings']; // dealing with minification of parameters.
   angular.module('InvoiceApp').controller('customerController', customerController);
 
 }());
