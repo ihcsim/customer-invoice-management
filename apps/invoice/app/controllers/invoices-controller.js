@@ -1,15 +1,15 @@
 (function(){
 
-  var InvoiceController = function($scope, $routeParams, InvoiceService){
+  var invoiceController = function($scope, $routeParams, invoiceService){
     var customerId = $routeParams.customerId;
 
     findCustomerInvoices();
     function findCustomerInvoices(){
-      $scope.invoices = InvoiceService.findCustomerInvoices(customerId);
+      $scope.invoices = invoiceService.findCustomerInvoices(customerId);
     }
   };
   
-  InvoiceController.$inject = ['$scope', '$routeParams', 'InvoiceService'];
-  angular.module('InvoiceApp').controller('InvoiceController', InvoiceController);  
+  invoiceController.$inject = ['$scope', '$routeParams', 'invoiceService'];
+  angular.module('InvoiceApp').controller('invoiceController', invoiceController);  
   
 }());

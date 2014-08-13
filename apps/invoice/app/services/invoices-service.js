@@ -1,6 +1,6 @@
 (function(){
 
-  var InvoiceService = function(){
+  var invoiceService = function(){
     
     var customers_invoices = [
       {id:1, name:'John Smith',city:'Vancouver',invoice_total:'10.8547',joined:'2014-07-01', invoices:[{id:1, invoice_date:'2014-07-02'}, {id:2, invoice_date:'2014-07-09'}]},
@@ -25,5 +25,5 @@
 
   };
 
-  angular.module('InvoiceApp').service('InvoiceService', InvoiceService);
+  angular.module('InvoiceApp').service('invoiceService', invoiceService);
 } ());
