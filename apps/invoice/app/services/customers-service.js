@@ -21,5 +21,5 @@
     };
   };
 
-  angular.module('InvoiceApp').factory('CustomerService', CustomerService);
+  angular.module('InvoiceApp').service('CustomerService', CustomerService);
 }());
