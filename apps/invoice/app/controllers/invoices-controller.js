@@ -3,10 +3,13 @@
   var invoiceController = function($scope, $routeParams, invoiceService){
     var customerId = $routeParams.customerId;
 
-    findCustomerInvoices();
-    function findCustomerInvoices(){
-      $scope.invoices = invoiceService.findCustomerInvoices(customerId);
-    }
+    invoiceService.findCustomerInvoices(customerId)
+      .success(function(invoices){
+        $scope.invoices = invoices;
+      })
+      .error(function(data, status, headers, config){
+        console.log(data);
+      });
   };
   
   invoiceController.$inject = ['$scope', '$routeParams', 'invoiceService'];

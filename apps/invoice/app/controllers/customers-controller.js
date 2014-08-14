@@ -5,7 +5,14 @@
     $scope.sortBy = 'name'; // default sort
     $scope.reverse = false;
     $scope.appSettings = appSettings;
-    $scope.customers = customerService.getCustomers();
+    
+    customerService.getCustomers()
+      .success(function(customers){
+        $scope.customers = customers;
+      })
+      .error(function(data, status, headers, config){
+        console.log(data);
+      });
 
     $scope.doSort = function(property){
       $scope.sortBy = property;
