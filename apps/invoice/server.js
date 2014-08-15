@@ -6,6 +6,7 @@ app.use(express.static(__dirname, '/public'));
 app.get('/r/invoice/:id',function(req, res){
   var customerId = parseInt(req.params.id);
   var data = {};
+
   for(var index in customers_invoices)
     if(customers_invoices[index].id == customerId) {
       data = customers_invoices[index].invoices;
@@ -14,6 +15,9 @@ app.get('/r/invoice/:id',function(req, res){
   res.json(data);
 });
 
+app.get('/r/invoices/', function(req, res){
+  res.json(customers_invoices);
+});
 
 app.get('/r/customers', function(req, res){
   res.json(customers);
