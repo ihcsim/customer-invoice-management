@@ -2,11 +2,13 @@
 <table id="customer-invoice-table" class="data-table">
   <tr>
     <th>Invoice ID</th>
+    <th>Invoice Date</th>
     <th>Total</th>
-  </tr>
+ </tr>
 
   <tr data-ng-repeat="invoice in invoices">
     <td>{{invoice.id}}</td>
     <td>{{invoice.invoice_date}}</td>
-  </tr>
+    <td>{{invoice.total | currency}}</td>
+ </tr>
 </table>
