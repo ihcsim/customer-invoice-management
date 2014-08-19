@@ -6,7 +6,7 @@
   <div>Search Customer:&nbsp;<input id="customer-filter" type="text" data-ng-model="customerFilter" /></div>
     <div>Total number of customers: <span data-ng-bind="customers.length"></span></div>
       <div>
-        <table id="customers-table" class="data-table">
+        <table id="customers-table" class="data-table table table-striped">
           <tr>
             <th data-ng-click="doSort('name')">Name</th>
             <th data-ng-click="doSort('city')">City</th>
