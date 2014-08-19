@@ -2,12 +2,14 @@
 <html data-ng-app="InvoiceApp">
   <head>
     <link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
+
     <script type="text/javascript" src="scripts/angular.1.2.21.min.js"></script>
     <script type="text/javascript" src="scripts/angular-route.1.2.21.min.js"></script>
     <script type="text/javascript" src="app/invoice-app.js"></script>
     <script type="text/javascript" src="app/constants/app-constants.js"></script>
     <script type="text/javascript" src="app/controllers/customers-controller.js"></script>
     <script type="text/javascript" src="app/controllers/invoices-controller.js"></script>
+    <script type="text/javascript" src="app/controllers/records-controller.js"></script>
     <script type="text/javascript" src="app/factories/customers-factory.js"></script>
     <script type="text/javascript" src="app/factories/invoices-factory.js"></script>
     <script type="text/javascript" src="app/services/customers-service.js"></script>
@@ -19,6 +21,17 @@
     <div id="greetings" data-ng-switch on="user.isLoggedIn">
       <div id="guest-greetings" data-ng-switch-default>Hello Guest! <br />Please specify your username <input id="username" type="text" data-ng-model="user.username"/> prior to <a href="#" data-ng-click="user.isLoggedIn=true">logging in</a>.</div>
       <div id="admin-greetings" data-ng-switch-when="true">Welcome back <span data-ng-bind="user.username"></span>!</div>
+    </div>
+
+    <div id="navigation">
+      <header>
+        <nav class="navbar navbar-default">
+          <ul class="nav navbar-nav">
+            <li><a href="#/customers">View All Customers</a></li>
+            <li><a href="#/records">View All Invoices</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
 
     <div data-ng-view></div>

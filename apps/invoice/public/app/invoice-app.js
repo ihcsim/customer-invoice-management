@@ -6,12 +6,16 @@
       .when('/invoice/:customerId',{
           controller: 'invoiceController',
           templateUrl: 'app/views/invoices.html'
-        })
-      .when('/',{
+      })
+      .when('/customers',{
          controller: 'customerController',
          templateUrl: 'app/views/customers.html'
-       })
-      .otherwise({redirectTo: '/'});
+      })
+      .when('/records',{
+         controller: 'recordController',
+         templateUrl: 'app/views/records.html'
+      })
+      .otherwise({redirectTo: '/customers'});
   });
 
   app.filter('customCustomerFilter', function(){
