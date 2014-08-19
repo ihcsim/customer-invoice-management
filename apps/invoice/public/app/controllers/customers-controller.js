@@ -18,6 +18,10 @@
       $scope.sortBy = property;
       $scope.reverse = !$scope.reverse;
     };
+
+    $scope.deleteCustomer = function(customerId){
+      customerService.deleteCustomer(customerId);
+    };
   };
 
   customerController.$inject = ['$scope', '$log', 'customerService', 'appSettings']; // dealing with minification of parameters.

@@ -23,6 +23,19 @@ app.get('/r/customers', function(req, res){
   res.json(customers);
 });
 
+app.delete('/r/customers/:id', function(req, res){
+  var customerDeleted = false;
+  var customerId = parseInt(req.params.id);
+  for(var index in customers)
+    if(customers[index].id == customerId){
+      console.log('Deleting customer ' + customers[index].name);
+      customers.splice(index, 1);
+      customerDeleted = true;
+      break;
+    }
+  res.json(customerDeleted);
+});
+
 app.listen(8080);
 console.log('Express listening on port 8080...');
 
