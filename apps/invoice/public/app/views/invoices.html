@@ -2,13 +2,15 @@
 <table id="customer-invoice-table" class="data-table table table-striped">
   <tr>
     <th>Invoice ID</th>
+    <th>Product</th>
     <th>Invoice Date</th>
     <th>Total</th>
  </tr>
 
   <tr data-ng-repeat="invoice in invoices">
-    <td>{{invoice.id}}</td>
-    <td>{{invoice.invoice_date}}</td>
-    <td>{{invoice.total | currency}}</td>
+    <td><span data-ng-bind="invoice.id"></span></td>
+    <td><span data-ng-bind="invoice.product_name"></span></td>
+    <td><span data-ng-bind="invoice.invoice_date"></span></td>
+    <td><span data-ng-bind="invoice.total | currency"></span></td>
  </tr>
 </table>
