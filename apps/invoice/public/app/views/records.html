@@ -1,16 +1,16 @@
 <h2>All Invoices</h2>
 <table id="customer-invoice-table" class="data-table table table-striped">
   <tr>
-    <th>Invoice ID</th>
+    <th>Customer ID</th>
     <th>Customer Name</th>
-    <th>Invoice Date</th>
+    <th>Orders Count</th>
     <th>Total</th>
  </tr>
 
   <tr data-ng-repeat="record in invoice_records">
-    <td>{{record.invoices[0].id}}</td>
-    <td>{{record.name}}</td>
-    <td>{{record.invoices[0].invoice_date}}</td>
-    <td>{{record.invoices[0].total | currency}}</td>
+    <td><span data-ng-bind="record.customerId"></span></td>
+    <td><span data-ng-bind="record.customerName"></span></td>
+    <td><span data-ng-bind="record.ordersCount"></span></td>
+    <td><span data-ng-bind="record.total | currency"></span></td>
  </tr>
 </table>
