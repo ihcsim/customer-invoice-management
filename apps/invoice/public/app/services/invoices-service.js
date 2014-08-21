@@ -6,7 +6,7 @@
     };
 
     this.findAllInvoices = function(){
-      return $http.get('/r/invoices');      
+      return $http.get('/r/records');
     };
   };
 

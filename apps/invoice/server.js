@@ -15,7 +15,7 @@ app.get('/r/invoice/:id',function(req, res){
   res.json(data);
 });
 
-app.get('/r/invoices/', function(req, res){
+app.get('/r/records/', function(req, res){
   var customers_records = [];
   for(var index in customers_invoices) {
     var customerOrdersCount = customers_invoices[index].invoices.length;
