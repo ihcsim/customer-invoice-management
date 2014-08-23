@@ -15,24 +15,24 @@ app.get('/r/invoice/:id',function(req, res){
   res.json(data);
 });
 
-app.get('/r/records/', function(req, res){
-  var customers_records = [];
+app.get('/r/sales/', function(req, res){
+  var sales = [];
   for(var index in customers_invoices) {
     var customerOrdersCount = customers_invoices[index].invoices.length;
     var customerOrdersTotal = 0;
     for(var invoiceIndex in customers_invoices[index].invoices)
       customerOrdersTotal += parseFloat(customers_invoices[index].invoices[invoiceIndex].total);
 
-    var record = {
+    var sales_record = {
       customerId : customers_invoices[index].id,
       customerName: customers_invoices[index].name,
       ordersCount: customerOrdersCount,
       total: customerOrdersTotal
     };
-    customers_records.push(record);
+    sales.push(sales_record);
   }
 
-  res.json(customers_records);
+  res.json(sales);
 });
 
 app.get('/r/customers', function(req, res){

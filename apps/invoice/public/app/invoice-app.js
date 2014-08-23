@@ -11,9 +11,9 @@
          controller: 'customerController',
          templateUrl: 'app/views/customers.html'
       })
-      .when('/records',{
-         controller: 'recordController',
-         templateUrl: 'app/views/records.html'
+      .when('/sales',{
+         controller: 'salesController',
+         templateUrl: 'app/views/sales.html'
       })
       .otherwise({redirectTo: '/customers'});
   });
