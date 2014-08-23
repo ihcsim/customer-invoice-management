@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('InvoiceApp',['ngRoute']);
+  var app = angular.module('InvoiceApp',['ngRoute', 'ngGrid']);
 
   app.config(function($routeProvider){
     $routeProvider

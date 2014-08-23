@@ -3,9 +3,11 @@
   <head>
     <link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js" defer></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js" defer></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js" defer></script>
     <script type="text/javascript" src="app/invoice-app.js" defer></script>
     <script type="text/javascript" src="app/constants/app-constants.js" defer></script>
     <script type="text/javascript" src="app/controllers/customers-controller.js" defer></script>
@@ -38,7 +40,7 @@
     </div>
 
     <div data-ng-view></div>
- 
+    
     <hr />
     <div id="footer">Version: <span data-ng-bind="appSettings.version"></span></div>
 </body>

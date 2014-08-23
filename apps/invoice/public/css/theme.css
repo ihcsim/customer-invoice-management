@@ -26,9 +26,15 @@ table.data-table{
 
 table.data-table th, table.data-table td{
   padding:5px;
-  border: 1px solid lightgray;
+  border:1px solid lightgray;
 }
 
 table.data-table th{
   background-color:lightblue;
+}
+
+.gridStyle{
+  border:1px solid rgb(212,212,212,212);
+  width:400px;
+  height:400px;  
 }
