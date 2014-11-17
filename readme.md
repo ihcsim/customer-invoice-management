@@ -12,4 +12,9 @@ This project contains the following applications:
  * Server-side script to return some dummy data: `apps/invoice/server.js`
    * Install [nodejs](https://nodejs.org) to run the server-side script.
  
-If you found this sample useful, please [![endorse](https://api.coderwall.com/ivanhcsim/endorsecount.png)](https://coderwall.com/ivanhcsim) me on coderwall.
+Follow me on [![alt text][1.1]][1]
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[1]: http://www.twitter.com/IvanHCSIM
+
+If you found this sample useful, please consider [![endorsing](https://api.coderwall.com/ivanhcsim/endorsecount.png)](https://coderwall.com/ivanhcsim) me on coderwall.
+
